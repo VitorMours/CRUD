@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <link rel="stylesheet" href="{{ url_for('static', filename="css/base.css") }}">
+    <title>{%  block title %}{% endblock %} - Rune Tables</title>
+</head>
+<body>
+    <header>
+        {% block header %}
+        {% endblock %}
+    </header>
+    <main>
+        {% block main %}
+        {% endblock %}
+    </main>
+    <footer>
+        {% block footer %}
+        {% endblock %}
+    </footer>
+
+</body>
+</html>

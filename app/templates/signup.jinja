@@ -1,0 +1,22 @@
+{% extends "base.jinja" %}
+
+{% block title %}Sign in{% endblock %}
+
+{% block header %}
+
+{% endblock %}
+{% block main %}
+<form method="POST">
+  {{ form.csrf_token }}
+  {{ form.name.label }}<br/> 
+  {{ form.name(size=20) }}
+  
+  
+  {{ form.email.label }}<br/>
+  {{ form.email(size=100)}}
+  
+  {{ form.password.label }}<br/>
+  {{ form.password(size=100) }}
+  <input type="submit" value="Cadastrar">
+</form>
+{% endblock %}

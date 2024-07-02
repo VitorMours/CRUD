@@ -2,44 +2,48 @@
 
 {% block title %}Home{% endblock %}
 
-{% block body %}
-    {% block header %}
-        <div class="container">
-            <!--Colocar imagem do site, deve ser uma mesa com inscrições runicas-->
-        </div>
+{% block header %}
+<div class="content-container">
+  <h1>Rune Tables</h1>
+  <nav>
+    <ul> <!-- Colocar aqui embaixo o link pra função d evisualização de sign in-->
+      <li><a href="{{ url_for('views.signup') }}" target="_self">Sign Up</a></li>
+      <li><a href="{{ url_for('views.login') }}" target="_self">Log In</a></li>
+    </ul>
+  </nav>        
+</div>
+{% endblock %}
+{% block main %}
+<div class="content-container">
+<section>
+  <article>
+    <h1>Rune Tables</h1>
+    <p>
+      Pare de se perder em meio aos dados e às fichas, venha fazer parte da nova geração de jogadores de RPG.
+    </p>
+  </article>
 
+</section>
 
-        <div class="container">
-            <nav>
-                <ul>
-                    <li>Home</li>
-                    <li>Contribute to Us</li>
-                    <li>Our History</li>
-                </ul>
-            </nav>
-        </div>
+</div>
 
+{% endblock %}
 
-
-    {% endblock %}
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+{% block footer %}
+<div>
+  <h6>Informações Adicionais</h6>
+  <ul>
+      <li><a href="" target="_self">Formas de Contato</a></li>
+      <li><a href="" target="_self">Nossa Equipe</a></li>
+      <li><a href="" target="_self">Nossa História</a></li>
+  </ul>
+</div>
+<div>
+  <h6>Redes Sociais</h6>
+  <ul>
+      <li></li>
+      <li></li>
+      <li></li>
+  </ul>  
+</div>
 {% endblock %}

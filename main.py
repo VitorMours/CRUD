@@ -8,14 +8,19 @@ if __name__ == "__main__":
 
         case "api":
             from app import dd_api
-            usuario = dd_api.CharacterCreator({"name":"Jonilson","age":22})
-            print(usuario)
+            print("Creating api")
+                    
+            
 
         case "total":
             import app
             from app import dd_api
+            
 
-            usuario = dd_api.CharacterCreator({"name": "Jonilson", "age": 22})
-            print(usuario)
 
+            app.run_app()
+
+
+        case _:
+            import app 
             app.run_app()

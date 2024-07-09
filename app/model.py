@@ -38,7 +38,7 @@ class Character(Base):
     xp: Mapped[int] = mapped_column()
     
 
-    # Attributes
+# Attributes
     forca: Mapped[int] = mapped_column()
     destreza: Mapped[int] = mapped_column() 
     constituicao: Mapped[int] = mapped_column()

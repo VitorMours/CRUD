@@ -3,20 +3,32 @@
 {% block title %}Sign in{% endblock %}
 
 {% block header %}
-
+  {% include 'includes/header.jinja' %}
 {% endblock %}
 {% block main %}
-<form method="POST">
-  {{ form.csrf_token }}
-  {{ form.name.label }}<br/> 
-  {{ form.name(size=20) }}
-  
-  
-  {{ form.email.label }}<br/>
-  {{ form.email(size=100)}}
-  
-  {{ form.password.label }}<br/>
-  {{ form.password(size=100) }}
-  <input type="submit" value="Cadastrar">
-</form>
+
+<div class="content-container">
+  <div class="registration-container">
+    <h3>Formulário de Sign in</h3>
+    <form method="POST">
+      
+      <div class="form-input">
+        {{ form.csrf_token }}
+        {{ form.name.label }}<br/> 
+        {{ form.name(size=20) }}
+      </div>
+      <div class="form-input">
+        {{ form.email.label }}<br/>
+        {{ form.email(size=50)}}
+      </div>
+      
+      <div class="form-input">
+        {{ form.password.label }}<br/>
+        {{ form.password(size=30) }}
+      </div>
+      
+      <input type="submit" value="Cadastrar">
+    </form>
+  </div>
+</div>
 {% endblock %}

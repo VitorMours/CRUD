@@ -21,6 +21,7 @@ def index():
     return render_template("index.jinja")
 
 @views.route("/signup")
+@login_required
 def signup():
 
     form = SignUpForm()

@@ -3,25 +3,24 @@
 {% block title %}Home{% endblock %}
 
 {% block header %}
-<div class="content-container">
-  <h1>Rune Tables</h1>
-  <nav>
-    <ul> <!-- Colocar aqui embaixo o link pra função d evisualização de sign in-->
-      <li><a href="{{ url_for('views.signup') }}" target="_self">Sign Up</a></li>
-      <li><a href="{{ url_for('views.login') }}" target="_self">Log In</a></li>
-    </ul>
-  </nav>        
-</div>
+  {% include 'includes/header.jinja' %}
 {% endblock %}
 {% block main %}
 <div class="content-container">
-<section>
-  <article>
-    <h1>Rune Tables</h1>
-    <p>
-      Pare de se perder em meio aos dados e às fichas, venha fazer parte da nova geração de jogadores de RPG.
-    </p>
-  </article>
+  {% include 'includes/flashes.jinja' %}  
+
+  <section>
+    <article>
+      <h1>Rune Tables</h1>
+      <h2>Rune Tables</h2>
+      <h3>Rune Tables</h3>
+      <h4>Rune Tables</h4>
+      <h5>Rune Tables</h5>
+      <h6>Rune Tables</h6>
+      <p>
+        Pare de se perder em meio aos dados e às fichas, venha fazer parte da nova geração de jogadores de RPG.
+      </p>
+    </article>
 
 </section>
 
@@ -41,9 +40,9 @@
 <div>
   <h6>Redes Sociais</h6>
   <ul>
-      <li></li>
-      <li></li>
-      <li></li>
+      <li><a href="" target="_blank">Instagram</a></li>
+      <li><a href="" target="_blank">Threads</a></li>
+      <li><a href="" target="_blank">Linkedin</a></li>
   </ul>  
 </div>
 {% endblock %}

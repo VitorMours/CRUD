@@ -1,14 +1,90 @@
+@import url('https://fonts.googleapis.com/css2?family=Bree+Serif&display=swap');
+
+/* Global and Rooting settings */
+:root{
+    font-family: "Bree Serif", serif;
+    font-weight:400;
+    font-style:normal;
+    --midnight-green-dark:#003C43;
+    --midnight-green-light:#135D66;
+    --verdigris:#77B0AA;
+    --mint-green:#E3FEF7;
+    --night:#101010;
+    --whitesmoke:whitesmoke;
+    --alert-text:#D0342C;
+    --alert:#edaeab; 
+    --info 
+}
 * {
     margin:0px;
     padding:0px;
 }
+/* Custom (I forget the name) settings */
+/* TODO: Remember the name of the thigs i make only for me, and use */
+/* Tags settings */
 
-.container {
-    max-width: 80vw;
+h1 {font-size: 5em;}
+h2 {font-size: 4em;}
+h3 {font-size: 3em;}
+h4 {font-size: 2.5em;}
+h5 {font-size: 2em;}
+h6 {font-size: 1.5em;}
+
+a {
+    color:var(--whitesmoke);
+    text-decoration:none;
+}
+a:hover {
+    font-weight: bold;
+}
+
+/* Classes settings */
+.content-container {
+    padding: 0vh 10vw;
+    padding-top:10px;
+    padding-bottom:10px;
+}
+
+body {
+
 }
 
 header {
+    background-color:var(--midnight-green-dark);
 
+}   
+.header-content {
+    display:flex;   
+    justify-content:space-between;
+    align-items: center;
+}
+nav {   
+    display:flex;
+}
+nav  > ul {
+    display:flex;
+    gap:30px;
+    list-style-type: none;
+}
 
-    
+.flash-messages {
+    padding:10px;
+    border-radius: 8px; 
+    list-style: none;
+    background-color:var(--alert);
+    color:var(--alert-text);
+}
+.flash-container {
+    display:flex;
+    justify-content: space-between;
+}
+button {
+    background-color: transparent;
+    border-color: transparent;
+    cursor: pointer;
+}
+footer {
+    background-color:var(--night);
+    color:var(--whitesmoke);
+
 }

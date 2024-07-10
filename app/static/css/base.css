@@ -51,6 +51,7 @@ body {
 
 header {
     background-color:var(--midnight-green-dark);
+    color:var(--whitesmoke);
 
 }   
 .header-content {

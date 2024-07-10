@@ -1,6 +1,9 @@
-from flask import Flask, request, jsonify, render_template, Blueprint, flash, redirect, session, g, url_for
+from flask import Flask, request, jsonify, render_template, Blueprint, flash, redirect, session, g, url_for, current_app
 from functools import wraps
-from .forms import SignUpForm    
+from .forms import SignUpForm, LoginForm    
+
+
+
 
 views = Blueprint("views", __name__)
 
@@ -16,21 +19,34 @@ def login_required(f):
 
 
 
-@views.route("/")
+@views.get("/")
 def index():
     return render_template("index.jinja")
 
-@views.route("/signup")
-@login_required
+@views.route("/signup", methods = ["GET", "POST"])
 def signup():
+    if request.method == "POST":
+        name = request.form['name']
+        email = request.form['email']
+        password = request.form['password']
 
-    form = SignUpForm()
+        flash("Login maked!")
+        return redirect(url_for("views.index"))
 
-    return render_template("signup.jinja", form=form)
+    if request.method == "GET":
+        form = SignUpForm()
+        return render_template("signup.jinja", form=form)
+
 
 @views.route("/login")
 def login():
     return render_template("login.jinja")
 
 
+
+
+
+@views.route("/homepage/<int:id>")
+def homepage_logged():
+    pass
 

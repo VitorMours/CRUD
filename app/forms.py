@@ -5,7 +5,6 @@ from wtforms.validators import DataRequired
 
 class SignUpForm(FlaskForm):
        name = StringField("name", validators=[DataRequired()], render_kw={"placeholder":"Your name"})
-       nickname = StringField("Your nickname", validators=[DataRequired()], render_kw={"placeholder":"Create a nickname"})
        email = EmailField("email", validators=[DataRequired()], render_kw={"placeholder":"email"})
        password = PasswordField("password", validators=[DataRequired()], render_kw={"placeholder":"set a password"})
        check_password = PasswordField("re-enter yout password", validators=[DataRequired()], render_kw={"placeholder":"type your password again"})

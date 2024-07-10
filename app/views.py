@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template, Blueprint, flash, redirect, session, g, url_for, current_app
 from functools import wraps
 from .forms import SignUpForm, LoginForm    
-
+from .models import User, Table, Character, db
 
 
 
@@ -30,8 +30,16 @@ def signup():
         email = request.form['email']
         password = request.form['password']
 
-        flash("Login maked!")
-        return redirect(url_for("views.index"))
+        user = User(
+                name = request.form['name'],
+                email = request.form['email'],
+                password = request.form['password'], 
+                )
+
+        db.session.add(user)
+        db.session.commit()
+        
+        return redirect(url_for("views.homepage"))
 
     if request.method == "GET":
         form = SignUpForm()
@@ -46,7 +54,7 @@ def login():
 
 
 
-@views.route("/homepage/<int:id>")
-def homepage_logged():
-    pass
+@views.route("/homepage/")
+def homepage():
+    return "Homepage"
 

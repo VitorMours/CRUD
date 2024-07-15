@@ -4,13 +4,19 @@ from sqlalchemy_utils import database_exists
 from flask_migrate import Migrate
 from .views import views
 from .auth import auth
-from .models import db, migrate, models_classes, User
+from .models import db, migrate, User, Table, Character
 #from .utils import create_tables
+import logging
 
 def create_app():
     app = Flask(__name__)
     app.config['SECRET_KEY'] = 'cuscuz com ovo' 
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///rune_tables.sqlite3'
+    
+    # Setting the application logging handler 
+    app.logger.setLevel(logging.INFO)
+    handler = logging.FileHandler('logger.log')
+    app.logger.addHandler(handler)
 
 
     # Registering Blueprints

@@ -42,27 +42,27 @@ class Character(db.Model):
 
 
 # Attributes
-    forca: Mapped[int] = mapped_column()
-    destreza: Mapped[int] = mapped_column() 
-    constituicao: Mapped[int] = mapped_column()
-    inteligencia: Mapped[int] = mapped_column()
-    sabedoria: Mapped[int] = mapped_column()
-    carisma: Mapped[int] = mapped_column()
+    forca: Mapped[int] = db.Column()
+    destreza: Mapped[int] = db.Column() 
+    constituicao: Mapped[int] = db.Column()
+    inteligencia: Mapped[int] = db.Column()
+    sabedoria: Mapped[int] = db.Column()
+    carisma: Mapped[int] = db.Column()
 
 
     #Second Page
 
 
     # Character attributes
-    inspiracao: Mapped[int] = mapped_column()
-    bonus_proeficiencia: Mapped[int] = mapped_column()
-    classe_armadura: Mapped[int] = mapped_column()
-    iniciativa: Mapped[int] = mapped_column()
-    deslocamento: Mapped[int] = mapped_column()
-    pontos_vida_atual: Mapped[int] = mapped_column()
-    pontos_vida_temporario: Mapped[int] = mapped_column()
-    dados_de_vida: Mapped[int] = mapped_column()
-    salva_guarda: Mapped[int] = mapped_column()
+    inspiracao: Mapped[int] = db.Column()
+    bonus_proeficiencia: Mapped[int] = db.Column()
+    classe_armadura: Mapped[int] = db.Column()
+    iniciativa: Mapped[int] = db.Column()
+    deslocamento: Mapped[int] = db.Column()
+    pontos_vida_atual: Mapped[int] = db.Column()
+    pontos_vida_temporario: Mapped[int] = db.Column()
+    dados_de_vida: Mapped[int] = db.Column()
+    salva_guarda: Mapped[int] = db.Column()
 
 
 
@@ -71,9 +71,9 @@ class Table(db.Model):
 
     __tablename__ = 'Table'
 
-    id: Mapped[int] = mapped_column(primary_key=True)
-    owner: Mapped[str] = mapped_column(String(30))
-
+    id: Mapped[int] = db.Column(Integer, primary_key=True)
+    owner: Mapped[str] = db.Column(String(30))
+    publicity: Mapped[bool] = db.Column()
 
     def __repr__(self) -> str:
         return f""
@@ -82,4 +82,3 @@ class Table(db.Model):
 
 
 
-models_classes = [Table, User, Character]

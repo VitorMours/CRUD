@@ -1,0 +1,14 @@
+<a href="{{ url_for('views.index') }}" no-decoration>
+	<h1 whitesmoke >Rune Tables</h1>
+</a>      
+<nav logged-navigation>
+	<ul platform-nav>
+		<li><a whitesmoke href="{{ url_for('views.games') }}">Public Games</a></li>
+		<li><a whitesmoke href="{{ url_for('views.tables') }}">My Tables</a></li>
+		<li><a whitesmoke href="{{ url_for('views.private_games') }}">My Games</a></li>
+	</ul>
+	<ul>
+		<li><a whitesmoke href="{{ url_for('views.profile') }}">Profile</a></li>
+		<li><a whitesmoke href="{{ url_for('views.logout') }}">Logout</a></li>
+	</ul>
+</nav>

@@ -1,0 +1,17 @@
+/* Custom css attributes and tags */
+
+[whitesmoke] {
+	color:whitesmoke;
+}
+
+[no-decoration]:hover{  
+	text-decoration: none;
+}
+
+[logged-navigation] {
+	display:flex;
+	justify-content:space-between;
+	align-content: space-between;
+	width: 85%;
+
+}

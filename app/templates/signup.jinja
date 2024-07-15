@@ -1,40 +1,35 @@
-{% extends "base.jinja" %}
-
-{% block title %}Sign in{% endblock %}
+{% extends 'module/extends/base.jinja' %}
+{% block title %}Sign Up{% endblock %}
 
 {% block header %}
-  {% include 'includes/header.jinja' %}
+	{% include 'module/includes/standard-header.jinja' %}
 {% endblock %}
+
 {% block main %}
+	<form method="POST" action="{{ url_for('views.signup') }}">
+		{{ form.csrf_token }}
 
-<div class="content-container">
-  <div class="registration-container">
-    <h3>Formulário de Sign in</h3>
-    <form method="POST">
-      
-      <div class="form-input">
-        {{ form.csrf_token }}
-        {{ form.name.label }}<br/> 
-        {{ form.name(size=20) }}
-      </div>
-      <div class="form-input">
-        {{ form.email.label }}<br/>
-        {{ form.email(size=50)}}
-      </div>
-      
-      <div class="form-input">
-        {{ form.password.label }}<br/>
-        {{ form.password(size=30) }}
-      </div>
-  
-      <div class="form-input">
-        {{ form.check_password.label }}<br/>
-        {{ form.check_password(size=30) }}
-      </div>
+		{{ form.name.label }} <br>
+		{{ form.name(size=50) }}
+		<br>
 
+		{{ form.email.label }} <br>
+		{{ form.email(size=50) }}
+		<br>
 
-      <input type="submit" value="Cadastrar">
-    </form>
-  </div>
-</div>
+		{{ form.password.label }} <br>
+		{{ form.password(size=50) }}
+		<br>
+
+		{{ form.check_password.label }} <br>
+		{{ form.check_password(size=50) }}
+		<br>
+
+		<input type="submit" name="Cadastrar">
+	</form>
 {% endblock %}
+{% block footer %}
+
+
+{% endblock %}
+s

@@ -2,90 +2,65 @@
 
 /* Global and Rooting settings */
 :root{
+    /* Site Font */
     font-family: "Bree Serif", serif;
     font-weight:400;
     font-style:normal;
-    --midnight-green-dark:#003C43;
-    --midnight-green-light:#135D66;
-    --verdigris:#77B0AA;
-    --mint-green:#E3FEF7;
-    --night:#101010;
-    --whitesmoke:whitesmoke;
+
+    /* Color Pallete */
+    --coffee:#6F4E37;
+    --french-beige:#A67B5B;
+    --middle-yellow-red:#ECB176; 
+    --light-orange:#FED8B1;
+    --dark-grey:#292929;
+
+    /* Alerts Colors */
     --alert-text:#D0342C;
     --alert:#edaeab; 
-    --info 
+    --info:#ffffff;
+    --sucess:#98fb98;
+    --sucess-text:#008000;   
 }
 * {
     margin:0px;
     padding:0px;
 }
-/* Custom (I forget the name) settings */
-/* TODO: Remember the name of the thigs i make only for me, and use */
-/* Tags settings */
 
-h1 {font-size: 5em;}
-h2 {font-size: 4em;}
-h3 {font-size: 3em;}
-h4 {font-size: 2.5em;}
-h5 {font-size: 2em;}
-h6 {font-size: 1.5em;}
+/* Standard Tags */
+header {
+    background-color:var(--coffee);
+    height:90px;
+    box-shadow: 0px 2px 2px grey;
+}
+ul { 
+    display: flex;
+    justify-content: space-between;
+    gap:70px;
+ }
+li {  
+    list-style-type:none;
+} 
 
 a {
-    color:var(--whitesmoke);
-    text-decoration:none;
+    color:black;
+    text-decoration: none;
 }
-a:hover {
-    font-weight: bold;
-}
-
-/* Classes settings */
-.content-container {
-    padding: 0vh 10vw;
-    padding-top:10px;
-    padding-bottom:10px;
+a:hover{
+    text-decoration: underline;
 }
 
-body {
 
-}
-
-header {
-    background-color:var(--midnight-green-dark);
-    color:var(--whitesmoke);
-
-}   
-.header-content {
-    display:flex;   
-    justify-content:space-between;
+/* Custom Classes */
+.header-content-container {
+    display: flex;
+    height:90px;
     align-items: center;
+    justify-content:space-between;
 }
-nav {   
-    display:flex;
-}
-nav  > ul {
-    display:flex;
-    gap:30px;
-    list-style-type: none;
+.content-container{
+    margin:0vh 10vw;
 }
 
-.flash-messages {
-    padding:10px;
-    border-radius: 8px; 
-    list-style: none;
-    background-color:var(--alert);
-    color:var(--alert-text);
-}
-.flash-container {
-    display:flex;
-    justify-content: space-between;
-}
-button {
-    background-color: transparent;
-    border-color: transparent;
-    cursor: pointer;
-}
-footer {
-    background-color:var(--night);
-    color:var(--whitesmoke);
+/**/
+/**/
 
-}

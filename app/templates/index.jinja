@@ -1,48 +1,16 @@
-{% extends "base.jinja" %}
+{% extends 'module/extends/base.jinja' %}
 
 {% block title %}Home{% endblock %}
 
 {% block header %}
-  {% include 'includes/header.jinja' %}
+	{% include 'module/includes/standard-header.jinja' %}
 {% endblock %}
+
 {% block main %}
-<div class="content-container">
-  {% include 'includes/flashes.jinja' %}  
 
-  <section>
-    <article>
-      <h1>Rune Tables</h1>
-      <h2>Rune Tables</h2>
-      <h3>Rune Tables</h3>
-      <h4>Rune Tables</h4>
-      <h5>Rune Tables</h5>
-      <h6>Rune Tables</h6>
-      <p>
-        Pare de se perder em meio aos dados e às fichas, venha fazer parte da nova geração de jogadores de RPG.
-      </p>
-    </article>
 
-</section>
-
-</div>
-
+	
 {% endblock %}
 
 {% block footer %}
-<div>
-  <h6>Informações Adicionais</h6>
-  <ul>
-      <li><a href="" target="_self">Formas de Contato</a></li>
-      <li><a href="" target="_self">Nossa Equipe</a></li>
-      <li><a href="" target="_self">Nossa História</a></li>
-  </ul>
-</div>
-<div>
-  <h6>Redes Sociais</h6>
-  <ul>
-      <li><a href="" target="_blank">Instagram</a></li>
-      <li><a href="" target="_blank">Threads</a></li>
-      <li><a href="" target="_blank">Linkedin</a></li>
-  </ul>  
-</div>
 {% endblock %}

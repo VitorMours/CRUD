@@ -1,8 +1,8 @@
-{% with messages = get_flashed_messages() %}
+{% with messages = get_flashed_messages(with_categories=true) %}
   {% if messages %}
     <ul class=flashes>
-    {% for message in messages %}
-      <div flash-message="info">  
+    {% for category, message in messages %}
+      <div flash-message="{{ category }}">  
         <li>{{ message }}</li>
         <button type="button" class="flash-message-button"><i class="material-symbols-outlined"> close </i></button>    
       </div>

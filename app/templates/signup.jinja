@@ -1,4 +1,8 @@
 {% extends 'module/extends/base.jinja' %}
+{% block css %}
+	<link rel="stylesheet" href="{{ url_for('static', filename="css/credentials.css") }}">
+{% endblock %}
+
 {% block title %}Sign Up{% endblock %}
 
 {% block header %}
@@ -6,27 +10,46 @@
 {% endblock %}
 
 {% block main %}
-	<form method="POST" action="{{ url_for('views.signup') }}">
-		{{ form.csrf_token }}
+	<div class="registration-area">	
+		<form method="POST" action="{{ url_for('views.signup') }}">
+			{{ form.csrf_token }}
 
-		{{ form.name.label }} <br>
-		{{ form.name(size=50) }}
-		<br>
+			<div class="input-area">
+				{{ form.profile_pic.label }} <br>
+				{{ form.profile_pic() }}
+				<br>
+			</div>
+			<div class="input-area">
 
-		{{ form.email.label }} <br>
-		{{ form.email(size=50) }}
-		<br>
+				{{ form.name.label }} <br>
+				{{ form.name(size=50) }}
+				<br>
+			</div>
 
-		{{ form.password.label }} <br>
-		{{ form.password(size=50) }}
-		<br>
+			<div class="input-area">
 
-		{{ form.check_password.label }} <br>
-		{{ form.check_password(size=50) }}
-		<br>
+				{{ form.email.label }} <br>
+				{{ form.email(size=50) }}
+				<br>
+			</div>
 
-		<input type="submit" name="Cadastrar">
-	</form>
+			<div class="input-area">
+
+				{{ form.password.label }} <br>
+				{{ form.password(size=50) }}
+				<br>
+			</div>
+
+			<div class="input-area">
+
+				{{ form.check_password.label }} <br>
+				{{ form.check_password(size=50) }}
+				<br>
+			</div>
+
+			<input type="submit" name="Cadastrar">
+		</form>
+	</div>
 {% endblock %}
 {% block footer %}
 

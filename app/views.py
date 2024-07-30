@@ -59,18 +59,24 @@ def signup():
 
 @views.route("/login", methods=["GET", "POST"])
 def login():
-
+    form = LoginForm()
     if request.method == "GET":
-        return render_template("login.jinja")
+        return render_template("login.jinja", form=form)
     
     else:
         if form.validate_on_submit():
-            email = request.form["email"]
+            credential = request.form["credential"]
             password = request.form["password"]
             session['logged_in'] = True
+            if (user := User.query.filter_by(email=credential).first()) is not None:
+                print(user.email)
+                print(user.password)
+                if user.password == password and user.email == credential:
+                    return redirect(url_for("views.homepage"))
 
-            if user := User.query.filter_by(email=email).first() is not None:
-                print(user)                
+                else:
+                    flash("Não existe nenhum usuário com essas credenciais", category="info")
+                    return redirect(url_for("views.login"))
 
 @views.route("/homepage")
 @login_required

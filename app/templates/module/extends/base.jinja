@@ -18,14 +18,17 @@
                 </div>
             </div>
         </header>
-        <main>
-            <div class="content-container">
+
+        <div class="content-container">
+            {% include 'module/includes/flashes.jinja' %}
+            <main>
                 {% block main %}
                 
                 {% endblock %}
-            </div>
 
-        </main>
+            </main>
+        </div>
+
         <footer>
             <div class="content-container">
                 {% block footer %}

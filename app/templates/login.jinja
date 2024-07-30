@@ -1,4 +1,8 @@
 {% extends 'module/extends/base.jinja' %}
+{% block css%}
+	<link rel="stylesheet" href="{{ url_for('static', filename="css/credentials.css")}}">
+{% endblock %}
+
 {% block title %}Login{% endblock %}
 
 {% block header %}
@@ -6,7 +10,28 @@
 {% endblock %}
 
 {% block main %}
+
+	<div class="registration-area">
+		<form method="POST">
+		{{ form.csrf_token }}
+
+		<div class="input-area">
+			{{ form.credential.label }}<br/>
+			{{ form.credential(size=50) }}
+			<br/>
+		</div>
+		
+		
+		<div class="input-area">
+			{{ form.password.label }}<br/>
+			{{ form.password(size=50) }}
+		</div>
+
+		<input type="submit" name"Log In">
+	</form>
+	</div>
+
 {% endblock %}
 
-{% block footer %}
+	{% block footer %}
 {% endblock %}

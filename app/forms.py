@@ -12,5 +12,5 @@ class SignUpForm(FlaskForm):
        check_password = PasswordField("check your password", validators=[DataRequired()], render_kw={"placeholder":"type your password again"})
 
 class LoginForm(FlaskForm):
-       credential = StringField("credentials", validators=[DataRequired()], render_kw={"placeholder":"Enter your credentials here, nickname or email"})
+       credential = StringField("credentials", validators=[DataRequired()], render_kw={"placeholder":"Your Email"})
        password = PasswordField("password", validators=[DataRequired()], render_kw={"placeholder":"Enter your password"})
